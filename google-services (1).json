@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1039100828216",
+    "project_id": "zisan-social",
+    "storage_bucket": "zisan-social.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039100828216:android:a7093496ad8d0b78fb64cd",
+        "android_client_info": {
+          "package_name": "com.zisan.social"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039100828216-0dql1524bjdpdmkg47d8v736e4332cls.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zisan.social",
+            "certificate_hash": "44fab8a49c00654262ef8462e6a066ad3dc07364"
+          }
+        },
+        {
+          "client_id": "1039100828216-f33mrenv9e4u2rpfliggqp705f8i9qm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEDBk59EHpjdRF7Lv1AUEYIPJXywJwNzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039100828216-f33mrenv9e4u2rpfliggqp705f8i9qm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
