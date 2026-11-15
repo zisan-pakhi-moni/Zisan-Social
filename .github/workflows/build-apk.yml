@@ -7,6 +7,7 @@ on:
     paths:
       - '**.zip'
       - 'google-services.json'
+      - 'debug.keystore'
       - '.github/workflows/**'
 
 jobs:
@@ -47,19 +48,15 @@ jobs:
           test -f google-services.json
           cp google-services.json "$PROJECT_DIR/app/google-services.json"
 
-      
-      - name: Generate Debug Keystore
+      - name: Use Stable Debug Keystore
         run: |
-          keytool -genkeypair -v \
+          test -f debug.keystore
+          cp debug.keystore "$PROJECT_DIR/debug.keystore"
+          keytool -list -v \
             -keystore "$PROJECT_DIR/debug.keystore" \
             -storepass android \
-            -keypass android \
-            -alias androiddebugkey \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -dname "CN=Android Debug,O=Android,C=US"
-  
+            -alias androiddebugkey | grep -E 'SHA1:|SHA256:'
+
       - name: Build APK
         run: |
           gradle -p "$PROJECT_DIR" :app:assembleDebug --stacktrace
@@ -70,3 +67,4 @@ jobs:
           name: Zisan-Social-APK
           path: source/**/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+          
